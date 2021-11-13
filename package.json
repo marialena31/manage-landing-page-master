@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "![Design preview for the Manage landing page coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
+  "homepage":"https://marialena31.github.io/manage-landing-page-master/",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "devserver": "live-server",
@@ -10,7 +11,9 @@
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
     "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
-    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+    "build:css": "npm-run-all compile:sass prefix:css compress:css",
+    "predeploy": "yarn build:css",
+    "deploy": "gh-pages -d build:css"
   },
   "author": "Maria'lena Pietri",
   "license": "ISC",
@@ -22,6 +25,7 @@
     "postcss-cli": "^9.0.2"
   },
   "dependencies": {
+    "gh-pages": "^3.2.3",
     "live-server": "^1.2.1"
   }
 }
