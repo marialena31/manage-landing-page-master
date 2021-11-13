@@ -1,0 +1,25 @@
+.headings-primary {
+    color: $color-blue-dark;
+    font-weight: $font-weight-bold;
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+  
+  .headings-secondary {
+    display: inline-block;
+    color: $color-blue-dark;
+    font-weight: $font-weight-bold;
+    font-size: 3.5rem;
+    line-height: 3.6rem;
+  }
+  
+  .headings-tertiary {
+    color: $color-blue-dark;
+    font-size: $font-body-size;
+    font-weight: $font-weight-bold;
+  }
+  
+  .paragraph {
+    color: $color-grey-blue;
+    font-size: $font-body-size;
+  }

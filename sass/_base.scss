@@ -1,0 +1,79 @@
+// COLOR VARIABLES
+$color-primary: hsl(12, 88%, 59%);
+
+$color-secondary: hsl(228, 39%, 23%);
+
+$color-grey-light: hsl(0, 0%, 98%);
+$color-red-pale: hsl(13, 100%, 96%);
+$color-blue-dark: hsl(233, 12%, 13%);
+$color-grey-blue: hsl(227, 12%, 61%);
+
+$color-black: black;
+$color-white: white;
+
+// FONT VARIABLES
+$font-primary: 'Be Vietnam', sans-serif;
+$font-body-size: 16px;
+
+$font-weight-light: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// RESPONSIVE BREAKPOINT
+$bp-largest: 90em; // 1440px
+$bp-small: 23.4em; // 375px
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-grey-blue;
+  font-weight: $font-weight-medium;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.container {
+    //max-width: 1440px;
+    margin: auto;
+    display: grid;
+    // grid-template-rows: 5rem minmax(min-content,max-content);
+    // grid-template-columns: 5rem minmax(min-content,max-content) 5rem;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.background-image-top {
+    background-image: url('../images/bg-tablet-pattern.svg');
+    background-repeat: no-repeat;
+    background-position-x: 80%;
+    background-position-y: -20%;
+}
+
+.background-image-bottom {
+    background-image: url('../images/bg-tablet-pattern.svg');
+    background-repeat: no-repeat;
+    background-position-x: -50%;
+    background-position-y: 35%;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
