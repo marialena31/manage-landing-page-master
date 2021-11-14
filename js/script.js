@@ -79,7 +79,7 @@ dotContainer.addEventListener("click", function (e) {
 testimonials.addEventListener("click", nextSlide);
 
 if(screen.width <= 600) {
-	const startX = 0; // start position
+	let startX = 0; // start position
 	const distance = 100; // 100 px de swipe to change slide
 	// first contact
 	testimonials.addEventListener("touchstart", function(evt) {
@@ -100,12 +100,13 @@ if(screen.width <= 600) {
 	testimonials.addEventListener("touchend", function(evt) {
 		const touches = evt.changedTouches[0];
 		const between = touches.pageX - startX;
+    let orientation;
 
 		// detect direction
 		if(between > 0) {
-			const orientation = "ltr";
+			orientation = "ltr";
 		} else {
-			const orientation = "rtl";
+			orientation = "rtl";
 		}
 
 		// change slide previous or next
