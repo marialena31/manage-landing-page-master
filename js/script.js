@@ -78,7 +78,7 @@ dotContainer.addEventListener("click", function (e) {
 // To mobile usage
 testimonials.addEventListener("click", nextSlide);
 
-if(screen.width <= 375) {
+if(screen.width <= 600) {
 	const startX = 0; // start position
 	const distance = 100; // 100 px de swipe to change slide
 	// first contact
