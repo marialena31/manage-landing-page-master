@@ -1,9 +1,10 @@
-//////////////////////////////////////////////////////////// Slider
+// Slider
 
 const slides = document.querySelectorAll(".slide");
 const btnLeft = document.querySelector(".slider__btn--left");
 const btnRight = document.querySelector(".slider__btn--right");
 const dotContainer = document.querySelector(".dots");
+const testimonials = document.querySelector(".testimonials");
 
 const createDots = function () {
   slides.forEach(function (_, i) {
@@ -43,7 +44,7 @@ const nextSlide = function () {
   } else {
     curSlide++;
   }
-
+  activateDot(curSlide);
   goToSlide(curSlide);
 };
 
@@ -53,7 +54,7 @@ const prevSlide = function () {
   } else {
     curSlide--;
   }
-
+  activateDot(curSlide);
   goToSlide(curSlide);
 };
 
@@ -73,3 +74,88 @@ dotContainer.addEventListener("click", function (e) {
     activateDot(slide);
   }
 });
+
+// To mobile usage
+testimonials.addEventListener("click", nextSlide);
+
+if(screen.width <= 375) {
+	const startX = 0; // start position
+	const distance = 100; // 100 px de swipe to change slide
+	// first contact
+	testimonials.addEventListener("touchstart", function(evt) {
+		// get keys
+		const touches = evt.changedTouches[0];
+		startX = touches.pageX;
+		between = 0;
+	}, false);
+
+	// when contact points move
+	testimonials.addEventListener("touchmove", function(evt) {
+		// to limit error
+		evt.preventDefault();
+		evt.stopPropagation();
+	}, false);
+
+	// when contact stop
+	testimonials.addEventListener("touchend", function(evt) {
+		const touches = evt.changedTouches[0];
+		const between = touches.pageX - startX;
+
+		// detect direction
+		if(between > 0) {
+			const orientation = "ltr";
+		} else {
+			const orientation = "rtl";
+		}
+
+		// change slide previous or next
+		if(Math.abs(between) >= distance && orientation == "ltr") {
+      prevSlide();
+		}
+		if(Math.abs(between) >= distance && orientation == "rtl") {
+      nextSlide()
+		}
+  }, false);
+}
+
+
+// Form validation
+
+const form = document.getElementsByTagName('form')[0];
+const email = document.getElementById('email');
+const error = document.querySelector('.footer__form__error');
+
+email.addEventListener("input", function(event) {
+  if(email.validity.valid) {
+    error.innerHTML = "";
+    error.className = "footer__form__error";
+    email.classList.remove('invalid');
+  }
+}, false);
+
+form.addEventListener("submit", function(event) {
+  if(!email.validity.valid) {
+    error.innerHTML = "Please insert a valid email";
+    error.className = "footer__form__error active";
+    email.classList.add('invalid');
+    event.preventDefault();
+  }
+}, false);
+
+
+// Mobile Menu
+const menu  = document.querySelector('.header__sidebar');
+const overlay  = document.querySelector('.overlay');
+
+function openMobileMenu() {
+    menu.style.display = "block";
+    overlay.style.visibility = "visible";
+}
+
+function closeMobileMenu() {
+  menu.style.display = "none";
+  overlay.style.visibility = "hidden";
+}
+
+overlay.addEventListener('click', closeMobileMenu);
+menu.addEventListener('click', closeMobileMenu);

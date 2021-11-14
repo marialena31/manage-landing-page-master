@@ -33,7 +33,7 @@
   
   .dots__dot {
     border: none;
-    background-color: $color-grey-light;
+    background-color: $color-grey-blue;
     opacity: 0.7;
     height: 1rem;
     width: 1rem;
@@ -52,6 +52,6 @@
   
   .dots__dot--active {
     /* background-color: #fff; */
-    background-color: $color-grey-blue;
+    background-color: $color-blue-dark;
     opacity: 1;
   }

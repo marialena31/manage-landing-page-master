@@ -15,16 +15,17 @@
   <body class="container background-image-top background-image-bottom">
     <header class="header">
       <div class="header__logo"><img src="images/logo.svg" alt="logo manage" class="header__logo__img"></div>
-      <nav class="header__sidebar">
+      <div class="header__sidebar">
         <ul>
-          <li>Pricing</li>
-          <li>Product</li>
-          <li>About Us</li>
-          <li>Careers</li>
-          <li>Community</li>
+          <li><a href="#" class="link header__sidebar__nav__link">Pricing</a></li>
+          <li><a href="#" class="link header__sidebar__nav__link">Product</a></li>
+          <li><a href="#" class="link header__sidebar__nav__link">About Us</a></li>
+          <li><a href="#" class="link header__sidebar__nav__link">Careers</a></li>
+          <li><a href="#" class="link header__sidebar__nav__link">Community</a></li>
         </ul>
-      </nav>
-      <button class="btn header__cta">Get started</button>
+      </div>
+      <a href="#" class="btn header__cta">Get started</a>
+      <a href="#" class="header__menu_mobile" onClick="openMobileMenu()"><img src="images/icon-hamburger.svg" alt="icone menu mobile" class="header__menu__mobile__img"></a>
     </header>
     <section class="introduction">
       <h1 class="headings-primary introduction__title">Bring everyone together to build better products.</h1>
@@ -32,7 +33,7 @@
         Manage makes it simple for software teams to plan day-to-day 
         tasks while keeping the larger team goals in view.
       </p>
-      <button class="btn introduction__cta">Get Started</button>
+      <a href="#" class="btn introduction__cta">Get Started</a>
       <img src="images/illustration-intro.svg" alt="Illustration" class="introduction__illustration">
     </section>
 
@@ -116,36 +117,39 @@
       <i class="fas fa-caret-left slider__btn slider__btn--left testimonials__btn--left"></i>
       <i class="fas fa-caret-right slider__btn slider__btn--right testimonials__btn--right"></i>
       <div class="dots testimonials__dots"></div>
-      <button class="btn testimonials__cta">Get Started</button>
+      <a href="#" class="btn testimonials__cta">Get Started</a>
     </section>
 
     <section class="simplify">
       <h2 class="headings-secondary simplify__title">Simplify how your team works today.</h2>
-      <button class="btn btn--inverted simplify__cta">Get Started</button>
+      <a href="#" class="btn btn--inverted simplify__cta">Get Started</a>
     </section>
     
     <footer class="footer">
       <img src="images/logo_white.svg" alt="" class="footer__logo">
       <div class="footer__social">
-        <img src="images/icon-facebook.svg" alt="facebook" class="footer__social__icon">
-        <img src="images/icon-instagram.svg" alt="instagram" class="footer__social__icon">
-        <img src="images/icon-twitter.svg" alt="twitter" class="footer__social__icon">
-        <img src="images/icon-pinterest.svg" alt="pinterest" class="footer__social__icon">
-        <img src="images/icon-youtube.svg" alt="youtube" class="footer__social__icon">
+        <a href="#" class="white footer__social__link"><img src="images/icon-facebook.svg" alt="facebook" class="footer__social__icon"></a>
+        <a href="#" class="white footer__social__link"><img src="images/icon-instagram.svg" alt="instagram" class="footer__social__icon"></a>
+        <a href="#" class="white footer__social__link"><img src="images/icon-twitter.svg" alt="twitter" class="footer__social__icon"></a>
+        <a href="#" class="white footer__social__link"><img src="images/icon-pinterest.svg" alt="pinterest" class="footer__social__icon"></a>
+        <a href="#" class="white footer__social__link"><img src="images/icon-youtube.svg" alt="youtube" class="footer__social__icon"></a>
       </div>
       <ul class="footer__nav__col__1">
-        <li class="footer__nav__item"><a href="#" class="footer__nav__link">Home</a></li>
-        <li class="footer__nav__item"><a href="#" class="footer__nav__link">Pricing</a></li>
-        <li class="footer__nav__item"><a href="#" class="footer__nav__link">Products</a></li>
-        <li class="footer__nav__item"><a href="#" class="footer__nav__link">About Us</a></li>
+        <li class="footer__nav__item"><a href="#" class="link footer__nav__link">Home</a></li>
+        <li class="footer__nav__item"><a href="#" class="link footer__nav__link">Pricing</a></li>
+        <li class="footer__nav__item"><a href="#" class="link footer__nav__link">Products</a></li>
+        <li class="footer__nav__item"><a href="#" class="link footer__nav__link">About Us</a></li>
       </ul>
       <ul class="footer__nav__col__2">
-        <li class="footer__nav__item"><a href="#" class="footer__nav__link">Careers</a></li>
-        <li class="footer__nav__item"><a href="#" class="footer__nav__link">Community</a></li>
-        <li class="footer__nav__item"><a href="#" class="footer__nav__link">Privacy Policy</a></li>
+        <li class="footer__nav__item"><a href="#" class="link footer__nav__link">Careers</a></li>
+        <li class="footer__nav__item"><a href="#" class="link footer__nav__link">Community</a></li>
+        <li class="footer__nav__item"><a href="#" class="link footer__nav__link">Privacy Policy</a></li>
       </ul>
-      <form class="footer__form" action="#">
-        <input type="email" class="footer__form__input footer__form__input__email" placeholder="Updates in your inbox…">
+      <form class="footer__form" novalidate>
+        <label for="mail" class="footer__form__label">
+          <input type="email" id="email" class="footer__form__input footer__form__input__email" name="email" placeholder="Updates in your inbox…" required>
+          <span class="footer__form__error" aria-live="polite"></span>
+        </label>
         <button class="btn footer__form__submit" type="submit">Go</button>
       </form>
       <div class="footer__copy">
@@ -158,6 +162,7 @@
         </p>
       </div>
     </footer>
+    <div class="overlay" style="visibility: hidden;"></div>
     <script src="js/script.js"></script>
   </body>
 </html>

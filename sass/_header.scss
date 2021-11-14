@@ -6,11 +6,40 @@
     align-content: space-between;
     align-items: center;
 
+    @media only screen and (max-width: $bp-small) {
+        margin-bottom: 2rem;
+        grid-template-columns: 80vw min-content;
+        grid-template-rows: 3rem min-content;
+    }
+
     &__logo{
         grid-column: 2 / 3;
         grid-row: 2 / 3;
         width: 200px;
         margin: auto;
+
+        @media only screen and (max-width: $bp-small) {
+            grid-column: 1 / 2;
+            align-self: start;
+            justify-self: start;
+            margin: 2rem;
+        }
+
+        &__img 
+        {
+            height:100%;
+         }
+    }
+
+    &__menu_mobile{
+        display: none;
+
+        @media only screen and (max-width: $bp-small) {
+            display: block;
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            margin: 2rem;
+        }
 
         &__img 
         {
@@ -22,25 +51,53 @@
         grid-column: 3 / 4;
         grid-row: 2 / 3;
         margin: auto;
+
+        @media only screen and (max-width: $bp-small) {
+            display: none;
+            position: absolute;
+            top: 15%;
+            background-color: $color-white;
+            width: 90vw;
+            margin: 2rem;
+            padding: 2rem;
+            z-index : 1000;
+        }
         
         > ul {
             display:grid;
             grid-template-columns:  max-content max-content max-content max-content max-content;
             gap: 3rem;
-            
-            
-            li {
+
+            @media only screen and (max-width: $bp-small) {
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        &__nav__link {
+            &,
+            &:link,
+            &:visited {
                 font-size: 1.2rem;
                 color: $color-blue-dark;
-                font-weight: $font-weight-bold;   
+                font-weight: $font-weight-bold; 
+            }
+
+            &:hover {
+                color: $color-grey-blue;
             }
         }
     
     }
 
-    &__cta {
+    &__cta.btn {
         grid-column: 4 / 5;
         grid-row: 2 / 3;
         align-self: flex-end;
+
+        @media only screen and (max-width: $bp-small) {
+            display: none;
+        }
     }
 }

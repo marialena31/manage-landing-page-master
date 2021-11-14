@@ -1,5 +1,5 @@
 // COLOR VARIABLES
-$color-primary: hsl(12, 88%, 59%);
+$color-primary: #f25f3a;
 
 $color-secondary: hsl(228, 39%, 23%);
 
@@ -21,7 +21,7 @@ $font-weight-bold: 700;
 
 // RESPONSIVE BREAKPOINT
 $bp-largest: 90em; // 1440px
-$bp-small: 23.4em; // 375px
+$bp-small: 23.5em; // 375px
 
 *,
 *::before,
@@ -74,6 +74,3 @@ a {
     background-position-x: -50%;
     background-position-y: 35%;
 }
-
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
